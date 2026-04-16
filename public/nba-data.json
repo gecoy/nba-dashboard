@@ -1,0 +1,31 @@
+[
+  { "id": 1, "name": "Stephen Curry", "team": "GSW", "position": "G", "number": "30", "ppg": "26.4", "apg": "5.1", "rpg": "4.5", "colorClass": "bg-blue-600" },
+  { "id": 2, "name": "LeBron James", "team": "LAL", "position": "F", "number": "23", "ppg": "25.7", "apg": "8.3", "rpg": "7.3", "colorClass": "bg-yellow-500" },
+  { "id": 3, "name": "Tanawat Petchkerd", "team": "PSNL", "position": "G", "number": "23", "ppg": "0.0", "apg": "0.0", "rpg": "0.0", "colorClass": "bg-cyan-500" },
+  { "id": 4, "name": "Tanawat Clone", "team": "PSNL", "position": "G", "number": "22", "ppg": "15.5", "apg": "2.0", "rpg": "1.0", "colorClass": "bg-red-500" },
+  { "id": 5, "name": "Kevin Durant", "team": "PHX", "position": "F", "number": "35", "ppg": "27.1", "apg": "5.0", "rpg": "6.6", "colorClass": "bg-orange-600" },
+
+  { "id": 6, "name": "Giannis Antetokounmpo", "team": "MIL", "position": "F", "number": "34", "ppg": "30.1", "apg": "5.8", "rpg": "11.2", "colorClass": "bg-green-600" },
+  { "id": 7, "name": "Luka Doncic", "team": "DAL", "position": "G", "number": "77", "ppg": "32.4", "apg": "8.6", "rpg": "8.0", "colorClass": "bg-blue-400" },
+  { "id": 8, "name": "Jayson Tatum", "team": "BOS", "position": "F", "number": "0", "ppg": "27.0", "apg": "4.3", "rpg": "8.1", "colorClass": "bg-green-500" },
+  { "id": 9, "name": "Joel Embiid", "team": "PHI", "position": "C", "number": "21", "ppg": "33.1", "apg": "4.2", "rpg": "10.2", "colorClass": "bg-blue-700" },
+  { "id": 10, "name": "Nikola Jokic", "team": "DEN", "position": "C", "number": "15", "ppg": "26.4", "apg": "9.0", "rpg": "12.4", "colorClass": "bg-yellow-600" },
+
+  { "id": 11, "name": "Kawhi Leonard", "team": "LAC", "position": "F", "number": "2", "ppg": "23.8", "apg": "3.9", "rpg": "6.5", "colorClass": "bg-gray-700" },
+  { "id": 12, "name": "Paul George", "team": "LAC", "position": "F", "number": "13", "ppg": "22.6", "apg": "5.2", "rpg": "5.6", "colorClass": "bg-indigo-600" },
+  { "id": 13, "name": "Devin Booker", "team": "PHX", "position": "G", "number": "1", "ppg": "27.8", "apg": "5.5", "rpg": "4.5", "colorClass": "bg-orange-500" },
+  { "id": 14, "name": "Jimmy Butler", "team": "MIA", "position": "F", "number": "22", "ppg": "22.9", "apg": "5.3", "rpg": "5.9", "colorClass": "bg-red-600" },
+  { "id": 15, "name": "Ja Morant", "team": "MEM", "position": "G", "number": "12", "ppg": "25.1", "apg": "8.1", "rpg": "5.6", "colorClass": "bg-blue-300" },
+
+  { "id": 16, "name": "Damian Lillard", "team": "MIL", "position": "G", "number": "0", "ppg": "28.3", "apg": "7.5", "rpg": "4.2", "colorClass": "bg-red-400" },
+  { "id": 17, "name": "Kyrie Irving", "team": "DAL", "position": "G", "number": "11", "ppg": "25.6", "apg": "5.1", "rpg": "4.8", "colorClass": "bg-purple-500" },
+  { "id": 18, "name": "Anthony Davis", "team": "LAL", "position": "C", "number": "3", "ppg": "24.7", "apg": "3.5", "rpg": "12.6", "colorClass": "bg-yellow-400" },
+  { "id": 19, "name": "Zion Williamson", "team": "NOP", "position": "F", "number": "1", "ppg": "26.0", "apg": "4.6", "rpg": "7.0", "colorClass": "bg-red-300" },
+  { "id": 20, "name": "Trae Young", "team": "ATL", "position": "G", "number": "11", "ppg": "26.2", "apg": "10.2", "rpg": "3.0", "colorClass": "bg-red-500" },
+
+  { "id": 21, "name": "James Harden", "team": "LAC", "position": "G", "number": "1", "ppg": "21.0", "apg": "10.5", "rpg": "6.1", "colorClass": "bg-blue-500" },
+  { "id": 22, "name": "Russell Westbrook", "team": "LAC", "position": "G", "number": "0", "ppg": "15.8", "apg": "7.2", "rpg": "6.3", "colorClass": "bg-orange-400" },
+  { "id": 23, "name": "DeMar DeRozan", "team": "CHI", "position": "F", "number": "11", "ppg": "24.0", "apg": "5.3", "rpg": "4.2", "colorClass": "bg-red-700" },
+  { "id": 24, "name": "Karl-Anthony Towns", "team": "MIN", "position": "C", "number": "32", "ppg": "21.8", "apg": "3.2", "rpg": "8.3", "colorClass": "bg-blue-600" },
+  { "id": 25, "name": "Shai Gilgeous-Alexander", "team": "OKC", "position": "G", "number": "2", "ppg": "31.4", "apg": "6.2", "rpg": "5.5", "colorClass": "bg-blue-800" }
+]
