@@ -21,7 +21,7 @@ function App() {
         setTimeout(() => {
           setPlayers(data)      // เอาข้อมูลที่ได้ ใส่กล่อง players
           setIsLoading(false)   // ปิดหน้าจอ Loading
-        }, 1000)
+        }, 150)
       })
       .catch((error) => console.error("พังครับ ดูดข้อมูลไม่ได้:", error))
   }, []) 
