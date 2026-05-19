@@ -93,8 +93,16 @@ func main() {
 	})
 	handler := c.Handler(r)
 
-	fmt.Println("🚀 Backend Go รันอยู่บนพอร์ต 8080...")
-	log.Fatal(http.ListenAndServe(":8080", handler))
+	// 1. ให้ไปถาม Cloud ว่าอยากให้ใช้ Port ไหน
+	port := os.Getenv("PORT")
+
+	// 2. ถ้าไม่มีคนบอก (เช่น ตอนรันในเครื่อง) ค่อยใช้ 8080 เป็นตัวสำรอง
+	if port == "" {
+		port = "8080"
+	}
+
+	fmt.Println("🚀 Backend Go รันอยู่บนพอร์ต", port)
+	log.Fatal(http.ListenAndServe(":"+port, handler))
 }
 
 // ฟังก์ชันดึงข้อมูลนักบาสทั้งหมด
