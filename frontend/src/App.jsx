@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     setIsLoading(true) 
     
-    fetch(`http://localhost:8080/api/players?search=${searchTerm}&sort=${sortType}`)
+    fetch(`https://nba-dashboard-production-39ec.up.railway.app/api/players?search=${searchTerm}&sort=${sortType}`)
       .then((response) => response.json())
       .then((data) => {
         setPlayers(data)      
