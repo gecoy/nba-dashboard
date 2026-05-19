@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -40,10 +41,32 @@ var db *sql.DB
 var jwtKey = []byte("my_ultra_secret_key_2026")
 
 func main() {
-	var err error
-	// ⚠️ อย่าลืมแก้ password ตรงนี้เป็นรหัสผ่าน Postgres ของคุณ
-	const dbinfo = "host=db port=5432 user=postgres password=password dbname=nba_db sslmode=disable"
+	// 1. ดึงค่าจาก Environment Variables
+	dbHost := os.Getenv("DB_HOST")
+	dbUser := os.Getenv("DB_USER")
+	dbPass := os.Getenv("DB_PASSWORD")
+	dbName := os.Getenv("DB_NAME")
 
+	// 2. ถ้าเผลอรันในเครื่อง แล้วค่าว่าง ให้ใช้ค่า Default เดิม
+	if dbHost == "" {
+		dbHost = "db"
+	}
+	if dbUser == "" {
+		dbUser = "postgres"
+	}
+	if dbPass == "" {
+		dbPass = "password"
+	}
+	if dbName == "" {
+		dbName = "nba_db"
+	}
+
+	// 3. ประกอบร่าง string เชื่อมต่อ
+	dbinfo := fmt.Sprintf("host=%s port=5432 user=%s password=%s dbname=%s sslmode=disable",
+		dbHost, dbUser, dbPass, dbName)
+
+	var err error
+	// เปิดการเชื่อมต่อด้วย dbinfo ตัวใหม่ตัวเดียว
 	db, err = sql.Open("postgres", dbinfo)
 	if err != nil {
 		log.Fatal(err)
@@ -52,23 +75,20 @@ func main() {
 
 	r := mux.NewRouter()
 
-	// สองอันนี้ไม่ต้องล็อก ใครๆ ก็ดูได้ (Public)
+	// --- ส่วนงาน API ---
 	r.HandleFunc("/api/players", getPlayers).Methods("GET")
 	r.HandleFunc("/api/players/{id}", getPlayerByID).Methods("GET")
 	r.HandleFunc("/api/register", registerUser).Methods("POST")
 	r.HandleFunc("/api/login", loginUser).Methods("POST")
 
-	// 🔒 สามอันนี้เป็นงานหลังบ้าน ต้องล็อกไว้ (Protected)
-	// โดยการเอา authMiddleware() มาครอบฟังก์ชันเดิมไว้ข้างในแบบนี้ครับ
 	r.HandleFunc("/api/players", authMiddleware(createPlayer)).Methods("POST")
 	r.HandleFunc("/api/players/{id}", authMiddleware(deletePlayer)).Methods("DELETE")
 	r.HandleFunc("/api/players/{id}", authMiddleware(updatePlayer)).Methods("PUT")
 
-	// ตั้งค่า CORS ให้ React เข้าถึงได้
+	// ตั้งค่า CORS
 	c := cors.New(cors.Options{
 		AllowedOrigins: []string{"*"},
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE"},
-		// 👇 เพิ่มบรรทัดนี้เข้าไป เพื่อบอกว่า "อนุญาตให้ส่งตั๋ว (Authorization) และข้อมูล JSON (Content-Type) ผ่านมาได้นะ"
 		AllowedHeaders: []string{"Content-Type", "Authorization"},
 	})
 	handler := c.Handler(r)
